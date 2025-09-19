@@ -3,6 +3,13 @@ export default function Projects() {
   return (
     <section id="projects" className="section">
       <h2>Projects</h2>
+       <div className="project">
+        <h3>Shop Manager</h3>
+        <p>
+         Shop Manager Pro system using Spring Boot, Kafka, Angular 17, and
+          AWS, Sql, Jenkins.
+        </p>
+      </div>
       <div className="project">
         <h3>Precise ID</h3>
         <p>
