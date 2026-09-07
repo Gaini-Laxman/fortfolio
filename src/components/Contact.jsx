@@ -5,9 +5,9 @@ export default function Contact() {
       <h2>Contact Me</h2>
       <p>
         Email:{" "}
-        <a href="mailto:gainilaxman10@gmail.com">gainilaxman10@gmail.com</a>
+        <a href="mailto:gainilaxman20@gmail.com">gainilaxman20@gmail.com</a>
       </p>
-      <p>Phone: +91-6281457874</p>
+      <p>Phone: +91-8555064001</p>
       <p>
         <a
           href="https://www.linkedin.com/in/gaini-laxman-59510bb0/"
