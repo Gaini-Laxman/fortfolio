@@ -1,0 +1,438 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 14px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.logo-letter {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 15px rgba(99, 102, 241, 0.4);
+
+  transition: 0.3s ease;
+}
+
+.navbar-logo:hover .logo-letter {
+  transform: scale(1.08);
+}
+
+
+/* ========================================
+   DESKTOP MENU
+======================================== */
+
+.navbar-menu {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   LINKS
+======================================== */
+
+.navbar-menu li a {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 8px 2px;
+
+  color: #cbd5e1;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #ffffff;
+}
+
+
+/* ========================================
+   LINK UNDERLINE
+======================================== */
+
+.navbar-menu li a:not(.resume-button)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #a855f7
+  );
+
+  transition: width 0.3s ease;
+}
+
+.navbar-menu li a:not(.resume-button):hover::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   RESUME BUTTON
+======================================== */
+
+.resume-button {
+  padding: 10px 20px !important;
+
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  color: white !important;
+
+  font-weight: 600 !important;
+
+  box-shadow:
+    0 4px 15px rgba(99, 102, 241, 0.3);
+
+  transition: 0.3s ease;
+}
+
+.resume-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 20px rgba(99, 102, 241, 0.5);
+}
+
+
+/* ========================================
+   HAMBURGER
+======================================== */
+
+.menu-toggle {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 7px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 25px;
+  height: 3px;
+
+  margin: 5px auto;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  transition: 0.3s ease;
+}
+
+
+/* ========================================
+   HAMBURGER → X
+======================================== */
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .navbar-container {
+    padding: 13px 20px;
+  }
+
+  .navbar-menu {
+    gap: 18px;
+  }
+
+  .navbar-menu li a {
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .navbar-container {
+    padding: 12px 18px;
+  }
+
+
+  /* Logo */
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .logo-letter {
+    width: 36px;
+    height: 36px;
+
+    font-size: 18px;
+  }
+
+
+  /* ======================================
+     SHOW HAMBURGER
+  ====================================== */
+
+  .menu-toggle {
+    display: block !important;
+
+    position: relative;
+
+    z-index: 1002;
+  }
+
+
+  /* ======================================
+     HIDE MENU BY DEFAULT
+  ====================================== */
+
+  .navbar-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    display: none !important;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0;
+
+    margin: 0;
+    padding: 15px 0 20px;
+
+    background: #0f172a;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.35);
+
+    box-sizing: border-box;
+  }
+
+
+  /* ======================================
+     SHOW MENU WHEN BUTTON CLICKED
+  ====================================== */
+
+  .navbar-menu.active {
+    display: flex !important;
+  }
+
+
+  /* ======================================
+     MOBILE LINKS
+  ====================================== */
+
+  .navbar-menu li {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .navbar-menu li a {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    box-sizing: border-box;
+
+    font-size: 16px;
+  }
+
+
+  /* Remove underline on mobile */
+
+  .navbar-menu li a:not(.resume-button)::after {
+    display: none;
+  }
+
+
+  /* ======================================
+     MOBILE RESUME
+  ====================================== */
+
+  .resume-button {
+    display: inline-block !important;
+
+    width: auto !important;
+
+    margin: 10px auto 5px;
+
+    padding: 11px 28px !important;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+  .navbar-container {
+    padding: 10px 14px;
+  }
+
+  .navbar-logo {
+    font-size: 16px;
+  }
+
+  .logo-letter {
+    width: 34px;
+    height: 34px;
+
+    font-size: 17px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+    padding-right: 61px;
+  }
+
+  .menu-toggle span {
+    width: 23px;
+  }
+}

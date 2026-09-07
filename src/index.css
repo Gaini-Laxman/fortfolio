@@ -1,52 +1,442 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #f7f7f7;
-  color: #333;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #222;
-  color: white;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
 }
 
 .section {
-  padding: 2rem;
-  background: white;
-  margin: 1rem;
-  border-radius: 10px;
+  width: min(1200px, calc(100% - 40px));
+  margin: 40px auto;
+  padding: 70px 40px;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px;
+}
+
+.section-tag {
+  display: inline-block;
+
+  margin-bottom: 10px;
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.section-header h2 {
+  margin: 0 0 12px;
+
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+
+  color: #0f172a;
+}
+
+.section-header p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
 }
 
 .project {
-  background: #eee;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
+  position: relative;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #222;
-  color: white;
+.project:hover {
+  transform: translateY(-6px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.10);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 8px;
+}
+
+.project-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 42px;
+  height: 42px;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.project h3 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.project-domain {
+  display: inline-block;
+
+  margin: 5px 0 15px;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.project p {
+  margin: 0 0 20px;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+.project ul {
+  margin: 0;
+  padding-left: 20px;
+
+  color: #475569;
+
+  font-size: 14px;
+}
+
+.project li {
+  margin-bottom: 9px;
+}
+
+.project li::marker {
+  color: #2563eb;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 25px;
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.project-tech span {
+  padding: 6px 11px;
+
+  border-radius: 6px;
+
+  background: #f1f5f9;
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.skill-card {
+  padding: 25px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.skill-card h3 {
+  position: relative;
+
+  margin: 0 0 18px;
+  padding-left: 14px;
+
+  color: #0f172a;
+
+  font-size: 19px;
+}
+
+.skill-card h3::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 3px;
+
+  width: 4px;
+  height: 20px;
+
+  border-radius: 5px;
+
+  background: #2563eb;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skill-tags span {
+  padding: 7px 12px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skill-tags span:hover {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    width: calc(100% - 30px);
+
+    padding: 55px 25px;
+
+    margin: 30px auto;
+  }
+
+  .projects-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    margin-bottom: 35px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    width: calc(100% - 20px);
+
+    margin: 20px auto;
+    padding: 40px 18px;
+
+    border-radius: 14px;
+  }
+
+  .section-header h2 {
+    font-size: 30px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .projects-grid {
+    gap: 18px;
+  }
+
+  .project {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .project-header {
+    align-items: flex-start;
+  }
+
+  .project-number {
+    min-width: 36px;
+    height: 36px;
+
+    font-size: 12px;
+  }
+
+  .project h3 {
+    font-size: 19px;
+  }
+
+  .project p {
+    font-size: 14px;
+  }
+
+  .project ul {
+    padding-left: 18px;
+    font-size: 13px;
+  }
+
+  .project li {
+    margin-bottom: 8px;
+  }
+
+  .project-tech {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+
+  .project-tech span {
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .skill-card h3 {
+    font-size: 17px;
+  }
+
+  .skill-tags {
+    gap: 7px;
+  }
+
+  .skill-tags span {
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    width: calc(100% - 12px);
+    padding: 32px 14px;
+  }
+
+  .project {
+    padding: 16px;
+  }
+
+  .project-header {
+    gap: 10px;
+  }
+
+  .project h3 {
+    font-size: 17px;
+  }
+
+  .section-header h2 {
+    font-size: 27px;
+  }
 }
