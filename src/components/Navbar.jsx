@@ -15,7 +15,8 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#about" className="navbar-logo" onClick={closeMenu}>
-          <span className="logo-letter">L</span>
+          <img src="/profile.jpg" alt="Gaini Laxman"
+            className="profile-logo" />
           <span className="logo-text">Laxman's Portfolio</span>
         </a>
 

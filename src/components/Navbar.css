@@ -59,7 +59,7 @@
   white-space: nowrap;
 }
 
-.logo-letter {
+.profile-logo {
   width: 40px;
   height: 40px;
 
@@ -86,7 +86,7 @@
   transition: 0.3s ease;
 }
 
-.navbar-logo:hover .logo-letter {
+.navbar-logo:hover .profile-logo {
   transform: scale(1.08);
 }
 
@@ -295,7 +295,7 @@
     font-size: 18px;
   }
 
-  .logo-letter {
+  .profile-logo {
     width: 36px;
     height: 36px;
 
@@ -419,7 +419,7 @@
     font-size: 16px;
   }
 
-  .logo-letter {
+  .profile-logo {
     width: 34px;
     height: 34px;
 
@@ -435,4 +435,35 @@
   .menu-toggle span {
     width: 23px;
   }
+}
+
+/* ========================================
+   PROFILE IMAGE
+======================================== */
+
+.profile-logo {
+  width: 42px;
+  height: 42px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid #6366f1;
+
+  box-shadow:
+    0 4px 15px rgba(99, 102, 241, 0.35);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar-logo:hover .profile-logo {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 6px 20px rgba(99, 102, 241, 0.5);
 }
